@@ -9,6 +9,16 @@
 # 3. Write a method that accepts a string as a parameter and returns an array containing each character as a separate value, but the character must also be capitalized.
 
 # 4. Write a method that accepts an array of numbers and returns the sum of all odd numbers.
+def sum_odds(numbers)
+  sum = 0
+  numbers.each do |number|
+    if number % 2 != 0
+      sum += number
+    end
+  end
+  sum
+end
+# p sum_odds([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
 # 5. (If you didn’t get to it last week) Write a method that accepts two arrays, and returns a new array that does a “riffle shuffle” between them. That is, if the first array is [1, 3, 5, 7, 9], and the second array is [2, 4, 6, 8, 10], the returned array should be [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].
 
