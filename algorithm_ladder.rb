@@ -80,13 +80,10 @@ class AlgorithmLadder
   # Given an array of numbers, return a new array in which only select numbers from the original array are included, based on the following details:
 
   # The new array should contain the first number from the original array. The next number that should be included depends on what the first number is. The first number dictates how many spaces to the right the computer should move to pick the next number. For example, if the first number is 2, then the next number that the computer should select would be two spaces to the right of this one. If the next number is 4, then the next number after that is the one four spaces to the right of this 4. And so on and so forth until the end of the array is reached.
-
   # Input:
   # [2, 1, 3, 2, 5, 1, 2, 6, 2, 7, 1, 5, 6, 3, 2, 6, 2, 1, 2]
-
   # Output:
   # [2, 3, 1, 2, 2, 1, 5, 2, 2]
-
   def skip(arr)
     skip_index = arr[0]
     new_arr = [arr[0]]
@@ -95,6 +92,69 @@ class AlgorithmLadder
       skip_index += arr[skip_index]
     end
     new_arr
+  end
+
+  # Return the reverse of a given string.
+  # Input: “abcde”
+  # Output: “edcba”
+  def reverse_string(str)
+    new_str = ""
+    index = str.length - 1
+    str.length.times do
+      new_str += str[index]
+      index -= 1
+    end
+    new_str
+  end
+
+  # Given a string, return true if the “$” character is contained within the string or false if it is not.
+  # Input: “i hate $ but i love money i know i know im crazy”
+  # Output: true
+  # Input: “abcdefghijklmnopqrstuvwxyz”
+  # Output: false
+  def money(str)
+    index = 0
+    str.length.times do 
+      if str[index] == "$"
+        return true
+      end
+      index += 1
+    end
+    false
+  end
+
+
+  # Given a string, return a copy of the original string that has every other character capitalized. (Capitalization should begin with the second character.)
+  # Input: “hello, how are your porcupines today?”
+  # Output: “hElLo, HoW ArE YoUr pOrCuPiNeS ToDaY?”
+  def switchcase(str)
+    str = str.downcase
+    index = 1
+    while index < str.length
+      str[index] = str[index].upcase
+      index += 2
+    end
+    str
+  end
+
+  # Given a string, find the first occurence of two duplicate characters in a row, and return the duplicated character.
+  # Input: “abcdefghhijkkloooop”
+  # Output: “h”
+  def find_duplicate(str)
+    i = 0
+
+    str.length.times do
+      j = 1
+      if 
+    end
+
+    # str.each_with_index do |i, j|
+    #   j += 1
+    #   if str[i] == str[j]
+    #     return str[i]
+    #   end
+    # end
+
   end
 
 end
@@ -109,10 +169,13 @@ algorithm = AlgorithmLadder.new
 # p algorithm.product_arr([1, 2, 3, 4])
 # p algorithm.reverse_arr([1, 2, 3, 4, 5])
 # p algorithm.skip([2, 1, 3, 2, 5, 1, 2, 6, 2, 7, 1, 5, 6, 3, 2, 6, 2, 1, 2])
+# p algorithm.reverse_string('abcde')
+# p algorithm.money('i hate $ but i love money i know i know im crazy')
+# p algorithm.money('abcdefghijklmnopqrstuvwxyz')
+# p algorithm.switchcase('hello, how are your porcupines today?')
 
-RSpec.describe AlgorithmLadder do
 
-  
+RSpec.describe AlgorithmLadder do  
   describe '#sum_array' do
 
 
