@@ -1,7 +1,8 @@
-require 'rspec'
-
+# https://trello.com/b/smxNsfu6/algorithm-ladder
 
 class AlgorithmLadder
+  
+  # *****************ARRAYS*****************
   # Return the sum of all numbers in a given array.
   # Input: [1, 2, 3, 4]
   # Output: 10
@@ -94,6 +95,10 @@ class AlgorithmLadder
     new_arr
   end
 
+  # *****************ARRAYS*****************
+
+  # *****************STRINGS*****************
+
   # Return the reverse of a given string.
   # Input: “abcde”
   # Output: “edcba”
@@ -144,17 +149,132 @@ class AlgorithmLadder
     i = 0
 
     str.length.times do
-      j = 1
-      if 
+      j = i + 1
+      str.length.times do
+        if str[i] == str[j]
+          return str[i]
+        end
+        j += 1
+      end
+      i += 1
+    end
+  end
+  # *****************STRINGS*****************
+
+
+  # *****************HASHES*****************
+
+  # Given a string, find the most commonly occurring letter.
+
+  # Input: “peter piper picked a peck of pickled peppers”
+  # Output: “p”
+  def repeats(str)
+    i = 0
+    letter_count = {}
+    most_common_letter = ""
+    most_common_count = 0
+
+    while i < str.length
+      if letter_count[str[i]]
+        letter_count[str[i]] += 1
+      else 
+        letter_count[str[i]] = 1
+      end
+
+      if letter_count[str[i]] > most_common_count
+        most_common_count = letter_count[str[i]]
+        most_common_letter = str[i]
+      end
+
+      i += 1
+    end
+    
+    most_common_letter
+  end
+
+  # *****************HASHES*****************
+
+# You are given two parameters, an array and a number. Return a hash whose keys are each of the values from the array parameter, and whose values are the number parameter.
+
+# Input:
+
+# First argument: ["a", "e", "i", "o", "u"]
+# Second argument: 1
+
+# Output:
+
+# {
+# 'a' => 1,
+# 'e' => 1,
+# 'i' => 1,
+# 'o' => 1,
+# 'u' => 1
+# }
+
+  def basic_hash(arr, num)
+    hash = Hash.new
+    arr.each do |element|
+      hash[element] = num
+    end
+    hash
+  end
+
+# Given a hash, return a flat array containing all the hash’s keys and values.
+
+# Input: {“a” => 1, “b” => 2, “c” => 3, “d” => 4}
+# Output: [“a”, 1, “b”, 2, “c”, 3, “d”, 4]
+  def flat_array(hash)
+    arr = []
+    hash.each do |k, v|
+      arr << k
+      arr << v
     end
 
-    # str.each_with_index do |i, j|
-    #   j += 1
-    #   if str[i] == str[j]
-    #     return str[i]
-    #   end
-    # end
+    arr
+  end
 
+  # Given a hash, create a new hash that has the keys and values switched.
+
+  # Input: {"a" => 1, "b" => 2, "c" => 3}
+  # Output: {1 => "a", 2 => "b", 3 => "c"}
+  def flip_hash(hash)
+    flipped_hash = {}
+
+    hash.each do |k, v|
+      flipped_hash[v] = k
+    end
+    flipped_hash
+  end
+
+  # Given a DNA strand, return its RNA complement (per RNA transcription).
+  # Both DNA and RNA strands are a sequence of nucleotides.
+  # The four nucleotides found in DNA are adenine (A), cytosine (C), guanine (G) and thymine (T).
+
+  # The four nucleotides found in RNA are adenine (A), cytosine (C), guanine (G) and uracil (U).
+
+  # Given a DNA strand, its transcribed RNA strand is formed by replacing each nucleotide with its complement, as follows:
+
+  # G -> C
+  # C -> G
+  # T -> A
+  # A -> U
+
+  # So based on all this, here's a sample input/output:
+
+  # Input: 'ACGTGGTCTTAA'
+  # Output: 'UGCACCAGAAUU'
+
+  def rna_transcription(dna_str)
+    decrypt_hash = {"G" => "C", "C" => "G", "T" => "A", "A" => "U"}
+    rna_str = ""
+    index = 0
+
+    dna_str.length.times do
+      rna_str += decrypt_hash[dna_str[index]]
+      index += 1
+    end
+
+    rna_str    
   end
 
 end
@@ -173,11 +293,9 @@ algorithm = AlgorithmLadder.new
 # p algorithm.money('i hate $ but i love money i know i know im crazy')
 # p algorithm.money('abcdefghijklmnopqrstuvwxyz')
 # p algorithm.switchcase('hello, how are your porcupines today?')
-
-
-RSpec.describe AlgorithmLadder do  
-  describe '#sum_array' do
-
-
-  end
-end
+# p algorithm.find_duplicate('abcdefghhijkkloooop')
+# p algorithm.repeats('peter piper picked a peck of pickled peppers')
+# p algorithm.basic_hash(["a", "e", "i", "o", "u"], 1)
+# p algorithm.flat_array({'a' => 1, 'b' => 2, 'c' => 3, 'd' => 4})
+# p algorithm.flip_hash({'a' => 1, 'b' => 2, 'c' => 3})
+p algorithm.rna_transcription('ACGTGGTCTTAA')

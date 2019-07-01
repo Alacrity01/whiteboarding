@@ -43,19 +43,25 @@
 # 33
 
 def gradingStudents(grades)
-  # n = grades.length
-  # i = 0
+  i = 0
+  rounded_grades = []
 
-  # grades.each do |grade|
-  #   p grade
-  #   p grade % 5
-  #   if grade < 38
-  #     grade = grade
-  #   elsif grade % 5 <= 2
-  #     grade -= grade % 5 + 5
-  #   end
-  # end
-  # grades
+  grades.length.times do 
+    if grades[i] < 38
+      rounded_grades << grades[i]
+    else 
+      remainder = grades[i] % 10
+      if remainder >= 3 && remainder <= 5
+        remainder = 5
+      elsif remainder >= 8
+        remainder = 10
+      end
+
+      rounded_grades << (grades[i] / 10) * 10 + remainder
+    end
+    i += 1
+  end
+  rounded_grades
 end
 
 grades = [
