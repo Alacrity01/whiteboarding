@@ -378,6 +378,28 @@ class AlgorithmLadder
 
     return count
   end
+
+
+  # Write a function that prints out every number from 1 to N, with the following exceptions:
+
+  # If the number is divisible by 3, print out "FIZZ".
+  # If the number is divisible by 5, print out "BUZZ".
+  # If the number is divisible by both 3 and 5, print out "FIZZBUZZ".
+  def fizzbuzz(n)
+    count = 0
+    until count == n
+      count += 1
+      if count % 15 == 0
+        p "FIZZBUZZ"
+      elsif count % 5 == 0
+        p "BUZZ"
+      elsif count % 3 == 0
+        p "FIZZ"
+      else
+        p count
+      end
+    end
+  end
 end
 
 
@@ -430,6 +452,6 @@ algorithm = AlgorithmLadder.new
 # p algorithm.n_primes(10)
 
 # p algorithm.collatz(12) # expect 9
-
+algorithm.fizzbuzz(100)
 
 
