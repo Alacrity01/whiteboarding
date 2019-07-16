@@ -183,6 +183,26 @@ class AlgorithmLadder
 
     return true  
   end
+
+
+  # Description
+  # Given a string of words, return a new string that contains the words in reverse order.
+
+  # Input: “popcorn is so cool isn’t it yeah i thought so”
+  # Output: “so thought i yeah it isn’t cool so is popcorn”
+
+  def reverse_words(string)
+    words_array = string.split(" ")
+    new_str = ""
+
+    i = words_array.length - 1
+    words_array.length.times do
+      new_str += "#{words_array[i]} "
+      i -= 1
+    end
+    
+    new_str.chop
+  end
   # *****************STRINGS*****************
 
 
@@ -479,7 +499,9 @@ algorithm = AlgorithmLadder.new
 
 # algorithm.fizzbuzz(100)
 
-p algorithm.palindrome("racecar") # expect true
-p algorithm.palindrome("boloney") # expect false
+# p algorithm.palindrome("racecar") # expect true
+# p algorithm.palindrome("boloney") # expect false
+
+# p algorithm.reverse_words("popcorn is so cool isn’t it yeah i thought so")
 
 
