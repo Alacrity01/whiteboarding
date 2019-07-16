@@ -200,7 +200,7 @@ class AlgorithmLadder
       new_str += "#{words_array[i]} "
       i -= 1
     end
-    
+
     new_str.chop
   end
   # *****************STRINGS*****************
@@ -234,6 +234,38 @@ class AlgorithmLadder
     end
     
     most_common_letter
+  end
+
+
+  # Given two strings of equal length, return the number of characters that are different between the two strings.
+
+  # Input: "ABCDEFG", "ABCXEOG"
+  # Output: 2
+
+  # Input: "ABCDEFG", "ABCDEFG",
+  # Output: 0
+  def hamming(str_1, str_2)
+    count = 0
+    i = 0
+
+    str_1.length.times do
+      no_match = true
+      j = 0
+
+      str_2.length.times do
+        if str_1[i] == str_2[j]
+          no_match = false
+        end
+        j += 1
+      end
+
+      if no_match == true
+        count += 1
+      end
+      i += 1
+    end
+
+    return count
   end
 
   # *****************HASHES*****************
@@ -503,5 +535,6 @@ algorithm = AlgorithmLadder.new
 # p algorithm.palindrome("boloney") # expect false
 
 # p algorithm.reverse_words("popcorn is so cool isn’t it yeah i thought so")
-
+# p algorithm.hamming("ABCDEFG", "ABCXEOG") # expect 2
+# p algorithm.hamming("ABCDEFG", "ABCDEFG") # expect 0
 
