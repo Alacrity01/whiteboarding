@@ -159,6 +159,30 @@ class AlgorithmLadder
       i += 1
     end
   end
+
+
+  # Given a string, return true if it is a palindrome, and false if it is not. (A palindrome is a word that reads the same both forward and backward.)
+
+  # Input: “racecar”
+  # Output: true
+
+  # Input: “baloney”
+  # Output: false
+  def palindrome(word)
+    i = 0
+    j = word.length - 1
+
+    word.length.times do
+      if word[i] == word[j]
+        i += 1
+        j -= 1
+      else
+        return false
+      end
+    end
+
+    return true  
+  end
   # *****************STRINGS*****************
 
 
@@ -452,6 +476,10 @@ algorithm = AlgorithmLadder.new
 # p algorithm.n_primes(10)
 
 # p algorithm.collatz(12) # expect 9
-algorithm.fizzbuzz(100)
+
+# algorithm.fizzbuzz(100)
+
+p algorithm.palindrome("racecar") # expect true
+p algorithm.palindrome("boloney") # expect false
 
 
