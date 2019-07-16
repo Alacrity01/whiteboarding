@@ -277,6 +277,107 @@ class AlgorithmLadder
     rna_str    
   end
 
+
+
+  # Given 3 x 3 matrix representing a Tic Tac Toe board, determine who the winner is. Return "X" or "O", or "C" if it's a cats game.
+
+  # Input: [
+  # [" ", "X", "O"],
+  # ["X", "O", " "],
+  # ["O", "X", " "]
+  # ]
+
+  # Output: "O"
+  def tic_tac_toe(matrix)
+    if matrix[0][0] == matrix[0][1] && matrix[0][1] == matrix[0][2] && matrix[0][0] != " " # row win
+      return matrix[0][0]
+    elsif matrix[1][0] == matrix[1][1] && matrix[1][1] == matrix[1][2] && matrix[1][0] != " " # row win
+      return matrix[1][0]
+    elsif matrix[2][0] == matrix[2][1] && matrix[2][1] == matrix[2][2] && matrix[2][0] != " " # row win
+      return matrix[2][0]
+    elsif matrix[0][0] == matrix[1][1] && matrix[1][1] == matrix[2][2] && matrix[0][0] != " " # diagonal win
+      return matrix[0][0]
+    elsif matrix[2][0] == matrix[1][1] && matrix[1][1] == matrix[0][2] && matrix[2][0] != " " # diagonal win
+      return matrix[2][0]
+    elsif matrix[0][0] == matrix[1][0] && matrix[1][0] == matrix[2][0] && matrix[0][0] != " " # column win
+      return matrix[0][0]
+    elsif matrix[0][1] == matrix[1][1] && matrix[1][1] == matrix[2][1] && matrix[0][1] != " " # column win
+      return matrix[0][1]
+    elsif matrix[0][2] == matrix[1][2] && matrix[1][2] == matrix[2][2] && matrix[0][2] != " " # column win
+      return matrix[0][2]
+    else
+      return "C"
+    end
+  end
+
+  # Write a function that returns whether a given number is prime
+  def is_prime(num)
+    primes = [2]
+    counter = 3
+    
+    until counter == num
+      index = 0
+      primes.each_with_index do |prime, index|
+        if counter % prime != 0
+          primes << counter
+        end
+        index += 1
+      end
+        counter += 1
+    end  
+
+    primes.each do |prime|
+      if num % prime == 0
+        return "#{num} is not prime"
+      end
+    end
+
+    return "#{num} is prime"
+  end
+
+  # Write a function that returns n prime numbers
+  def n_primes(n)
+
+  end
+
+
+  # The Collatz Conjecture or 3x+1 problem can be summarized as follows:
+
+  # Take any positive integer n. If n is even, divide n by 2 to get n / 2. If n is odd, multiply n by 3 and add 1 to get 3n + 1. Repeat the process indefinitely. The conjecture states that no matter which number you start with, you will always reach 1 eventually.
+
+  # Given a number n, return the number of steps required to reach 1.
+
+  # Examples
+  # Starting with n = 12, the steps would be as follows:
+
+  # 12
+  # 6
+  # 3
+  # 10
+  # 5
+  # 16
+  # 8
+  # 4
+  # 2
+  # 1
+
+  # Resulting in 9 steps. So for input n = 12, the return value would be 9.
+  def collatz(n)
+    count = 0
+
+    until n == 1
+      if n % 2 == 0
+        n /= 2
+        count += 1
+      else
+        n *= 3
+        n += 1
+        count += 1
+      end
+    end
+
+    return count
+  end
 end
 
 
@@ -298,4 +399,37 @@ algorithm = AlgorithmLadder.new
 # p algorithm.basic_hash(["a", "e", "i", "o", "u"], 1)
 # p algorithm.flat_array({'a' => 1, 'b' => 2, 'c' => 3, 'd' => 4})
 # p algorithm.flip_hash({'a' => 1, 'b' => 2, 'c' => 3})
-p algorithm.rna_transcription('ACGTGGTCTTAA')
+# p algorithm.rna_transcription('ACGTGGTCTTAA')
+# p algorithm.tic_tac_toe([[" ", "X", "O"],["X", "O", " "],["O", "X", " "]])
+
+
+# p algorithm.is_prime(3)
+# p algorithm.is_prime(4)
+# p algorithm.is_prime(5)
+# p algorithm.is_prime(6)
+# p algorithm.is_prime(7)
+# p algorithm.is_prime(8)
+# p algorithm.is_prime(9)
+# p algorithm.is_prime(11)
+# p algorithm.is_prime(12)
+# p algorithm.is_prime(13)
+# p algorithm.is_prime(14)
+# p algorithm.is_prime(15)
+# p algorithm.is_prime(16)
+# p algorithm.is_prime(17)
+
+# p algorithm.n_primes(1)
+# p algorithm.n_primes(2)
+# p algorithm.n_primes(3)
+# p algorithm.n_primes(4)
+# p algorithm.n_primes(5)
+# p algorithm.n_primes(6)
+# p algorithm.n_primes(7)
+# p algorithm.n_primes(8)
+# p algorithm.n_primes(9)
+# p algorithm.n_primes(10)
+
+# p algorithm.collatz(12) # expect 9
+
+
+
