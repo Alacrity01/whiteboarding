@@ -146,4 +146,7 @@ fruits = [
  {"name" => "grape", "color" => "purple"}
 ]
 
-fruits.map { || }
+fruit_hash = {}
+fruits.map { |fruit| fruit_hash[fruit["name"]] = fruit["color"] }
+
+p fruit_hash
