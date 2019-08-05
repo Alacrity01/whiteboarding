@@ -58,3 +58,32 @@ while index < numbers.length do
   index += 1
 end
 p sum
+
+# The following code will run 100 times, and each time it will ask the user for their name. The code will break early if the user’s name is Bob.
+# Rewrite the code using a while loop so the program will run *forever* unless the user enters a name of Bob.
+
+# original
+# 100.times do
+#  puts "What is your name?"  
+#  name = gets.chomp
+#  if name == "Bob"
+#    break
+#  end
+# end
+
+# puts "Hi, Bob!"
+
+# infinite loop unless Bob
+name = ''
+while name != "Bob" do
+  puts "What is your name?"
+  name = gets.chomp
+end
+
+puts "Hi, Bob!"
+
+
+#             1. Write a method called `average` that takes in an array of numbers and returns the average (the sum divided by the total number of numbers). Write it first using a `while` loop, then write it again using an `each` loop. (Hint - if you’re having issues with missing decimals, you may need the .to_f method…)
+# ```
+# p average([2, 1, 7, 5])  #=> 3.75
+# ```
