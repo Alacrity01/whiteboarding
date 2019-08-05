@@ -108,3 +108,42 @@ p doubled_numbers
 # refactored with map method
 numbers = [1, 2, 4, 2]
 p numbers.map {|number| number *= 2}
+
+# Use the `map` method to convert the array of hashes
+# ```
+# items = [
+#  {id: 1, body: 'foo'},
+#  {id: 2, body: 'bar'},
+#  {id: 3, body: 'foobar'}
+# ]
+# ```
+# into an array that only contains the ids. The result should look like:
+# ```
+# [1, 2, 3]
+items = [
+ {id: 1, body: 'foo'},
+ {id: 2, body: 'bar'},
+ {id: 3, body: 'foobar'}]
+
+p items.map {|element| element[:id]}
+
+ # Use the `map` method with the `to_h` method to convert the array of hashes
+# ```
+# fruits = [
+#  {"name" => "apple", "color" => "red"},
+#  {"name" => "banana", "color" => "yellow"},
+#  {"name" => "grape", "color" => "purple"}
+# ]
+# ```
+# into a single hash where the keys are the names and the values are the colors. The result should look like:
+# ```
+# {"apple" => "red", "banana" => "yellow", "grape" => "purple"}
+# ```
+
+fruits = [
+ {"name" => "apple", "color" => "red"},
+ {"name" => "banana", "color" => "yellow"},
+ {"name" => "grape", "color" => "purple"}
+]
+
+fruits.map { || }
