@@ -74,16 +74,37 @@ p sum
 # puts "Hi, Bob!"
 
 # infinite loop unless Bob
-name = ''
-while name != "Bob" do
-  puts "What is your name?"
-  name = gets.chomp
+# name = ''
+# while name != "Bob" do
+#   puts "What is your name?"
+#   name = gets.chomp
+# end
+
+# puts "Hi, Bob!"
+
+
+# Write a method called `average` that takes in an array of numbers and returns the average (the sum divided by the total number of numbers). Write it first using a `while` loop, then write it again using an `each` loop. (Hint - if you’re having issues with missing decimals, you may need the .to_f method…)
+
+def average(arr)
+  sum = 0
+  arr.each { |number| sum += number }
+  avg = sum.to_f / arr.length
 end
 
-puts "Hi, Bob!"
+
+p average([2, 1, 7, 5])  #=> 3.75
 
 
-#             1. Write a method called `average` that takes in an array of numbers and returns the average (the sum divided by the total number of numbers). Write it first using a `while` loop, then write it again using an `each` loop. (Hint - if you’re having issues with missing decimals, you may need the .to_f method…)
-# ```
-# p average([2, 1, 7, 5])  #=> 3.75
-# ```
+# Refactor using map method
+
+# original
+numbers = [1, 2, 4, 2]
+doubled_numbers = []
+numbers.each do |number|
+ doubled_numbers << number * 2
+end
+p doubled_numbers
+
+# refactored with map method
+numbers = [1, 2, 4, 2]
+p numbers.map {|number| number *= 2}
