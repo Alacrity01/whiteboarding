@@ -8,10 +8,16 @@ function greetInSpanish() {
   console.log('Buenas Tardes.')
 }
 
-function sayThanks() {
-  console.log('Thank you for your purchase! We appreciate your business.');
+// function sayThanks() {
+//   console.log('Thank you for your purchase! We appreciate your business.');
+// }
+
+// sayThanks();
+// sayThanks();
+// sayThanks();
+
+function sayThanks(name) {
+  console.log(`Thank you for your purchase ${name}! We appreciate your business.`);
 }
 
-sayThanks();
-sayThanks();
-sayThanks();
+sayThanks('Cole');
