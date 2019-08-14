@@ -150,3 +150,5 @@ fruit_hash = {}
 fruits.map { |fruit| fruit_hash[fruit["name"]] = fruit["color"] }
 
 p fruit_hash
+
+fruit.map { |name, color| name.to_sym }.to_h
