@@ -2,19 +2,23 @@
 
 import turtle
 
-
-t = turtle.Turtle()
-t.color('white', 'blue')
-t.begin_fill()
-
+turtle.color('white', 'blue')
+turtle.bgcolor('black')
+turtle.begin_fill()
 
 origin = (-100, 100)
 hexSide = 200
 hexAngle = 120
 
-t.setpos(origin)
-t.ht()
+turtle.penup()
+turtle.setpos(origin)
+turtle.ht()
 
-print(t.heading())
-print(t.pos())
-print(t.isvisible())
+print(turtle.heading())
+print(turtle.pos())
+print(turtle.isvisible())
+
+turtle.pendown()
+turtle.fd(hexSide)
+
+turtle.exitonclick()
