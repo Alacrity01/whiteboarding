@@ -3,9 +3,8 @@
 import turtle
 
 turtle.setup( width = 1920, height = 1080, startx = None, starty = None)
-turtle.color('white', 'blue')
 turtle.bgcolor('black')
-turtle.begin_fill()
+turtle.color('white', 'blue')
 
 origin = (float(-200), float(200))
 hexSide = 400
@@ -20,7 +19,6 @@ pointList = [origin]
 
 turtle.pendown()
 turtle.fd(hexSide)
-
 
 atOrigin = False
 
