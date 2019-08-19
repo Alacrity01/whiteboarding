@@ -3,9 +3,8 @@
 import turtle
 
 turtle.setup( width = 1920, height = 1080, startx = None, starty = None)
-turtle.screensize(1920, 1080, 'black')
 turtle.color('white', 'blue')
-# turtle.bgcolor('black')
+turtle.bgcolor('black')
 turtle.begin_fill()
 
 origin = (float(-200), float(200))
