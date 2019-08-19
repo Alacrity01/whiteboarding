@@ -8,7 +8,7 @@ turtle.begin_fill()
 
 origin = (-100, 100)
 hexSide = 200
-hexAngle = 120
+hexAngle = 180 - 120
 
 turtle.penup()
 turtle.setpos(origin)
@@ -20,5 +20,11 @@ print(turtle.isvisible())
 
 turtle.pendown()
 turtle.fd(hexSide)
+
+while turtle.pos() != origin:
+
+    turtle.right(hexAngle)
+    turtle.fd(hexSide)
+
 
 turtle.exitonclick()
