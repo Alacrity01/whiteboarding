@@ -38,20 +38,17 @@ print(pointList)
 
 turtle.penup()
 
+turtle.clear()
+
 turtle.setpos(pointList[5])
 
 turtle.pendown()
 
 turtle.goto(pointList[1])
-
 turtle.goto(pointList[3])
-
 turtle.goto(pointList[0])
-
 turtle.goto(pointList[4])
-
 turtle.goto(pointList[2])
-
 turtle.goto(pointList[5])
 
 
