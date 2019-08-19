@@ -38,5 +38,10 @@ print(pointsList)
 
 turtle.penup()
 
+turtle.setpos(pointsList[5])
+
+turtle.pendown()
+
+turtle.goto(pointsList[1])
 
 turtle.exitonclick()
