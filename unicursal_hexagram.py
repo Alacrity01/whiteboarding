@@ -18,7 +18,7 @@ turtle.ht()
 # print(turtle.heading())
 # print(turtle.isvisible())
 
-pointsList = [origin]
+pointList = [origin]
 
 turtle.pendown()
 turtle.fd(hexSide)
@@ -27,21 +27,33 @@ turtle.fd(hexSide)
 atOrigin = False
 
 while atOrigin == False:
-    pointsList.append(turtle.pos())
+    pointList.append(turtle.pos())
     turtle.right(hexAngle)
     turtle.fd(hexSide)
 
     if turtle.distance(origin) < 1.0:
         atOrigin = True
 
-print(pointsList)
+print(pointList)
 
 turtle.penup()
 
-turtle.setpos(pointsList[5])
+turtle.setpos(pointList[5])
 
 turtle.pendown()
 
-turtle.goto(pointsList[1])
+turtle.goto(pointList[1])
+
+turtle.goto(pointList[3])
+
+turtle.goto(pointList[0])
+
+turtle.goto(pointList[4])
+
+turtle.goto(pointList[2])
+
+turtle.goto(pointList[5])
+
+
 
 turtle.exitonclick()
