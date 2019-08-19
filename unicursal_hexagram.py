@@ -2,21 +2,20 @@
 
 import turtle
 
+turtle.setup( width = 1920, height = 1080, startx = None, starty = None)
+turtle.screensize(1920, 1080, 'black')
 turtle.color('white', 'blue')
-turtle.bgcolor('black')
+# turtle.bgcolor('black')
 turtle.begin_fill()
 
-origin = (float(-100), float(100))
-hexSide = 200
+origin = (float(-200), float(200))
+hexSide = 400
 hexAngle = 180 - 120
 
 turtle.penup()
 turtle.setpos(origin)
 turtle.setheading(30)
 turtle.ht()
-
-# print(turtle.heading())
-# print(turtle.isvisible())
 
 pointList = [origin]
 
@@ -36,21 +35,16 @@ while atOrigin == False:
 
 print(pointList)
 
-turtle.penup()
-
 turtle.clear()
-
+turtle.penup()
 turtle.setpos(pointList[5])
 
 turtle.pendown()
-
 turtle.goto(pointList[1])
 turtle.goto(pointList[3])
 turtle.goto(pointList[0])
 turtle.goto(pointList[4])
 turtle.goto(pointList[2])
 turtle.goto(pointList[5])
-
-
 
 turtle.exitonclick()
