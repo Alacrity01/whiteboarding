@@ -12,6 +12,7 @@ hexAngle = 180 - 120
 
 turtle.penup()
 turtle.setpos(origin)
+turtle.setheading(30)
 turtle.ht()
 
 # print(turtle.heading())
@@ -34,5 +35,8 @@ while atOrigin == False:
         atOrigin = True
 
 print(pointsList)
+
+turtle.penup()
+
 
 turtle.exitonclick()
