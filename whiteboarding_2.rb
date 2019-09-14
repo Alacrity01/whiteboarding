@@ -13,8 +13,19 @@ end
 
 p every_other_string(['a', 'b', 'c', 'd', 'e', 'f'])
 
-
 # ii. Write a method that accepts an array of strings and returns a new array that has the string 'awesomesauce' inserted between every string. For example, if the initial array is ['a', 'b', 'c', 'd', 'e'], then the returned array should be ['a', 'awesomesauce', 'b',  'awesomesauce', 'c',  'awesomesauce', 'd',  'awesomesauce', 'e'].
+
+def awesomesauce_array(arr)
+  new_arr = []
+  arr.each do |string|
+    new_arr << string
+    new_arr << 'awesomesauce'
+  end
+  new_arr.pop()
+  new_arr
+end
+
+p awesomesauce_array(['a', 'b', 'c', 'd', 'e'])
 
 # iii.  Write a method that accepts one argument - an array of numbers. The method should return the greatest number. For example, if the input is [5, 4, 8, 1, 2], the output should be 8.
 
