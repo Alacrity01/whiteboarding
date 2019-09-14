@@ -68,6 +68,17 @@ p factorial_without_recursion(5) # expect 120
 
 # v.  Write a method that accepts one argument - an array of numbers that are in ascending order. The method that returns a new array with the same values in descending order. However, do not use the 'reverse' method built in to Ruby.
 
+def reverse_array_manually(arr)
+  new_arr = []
+  i = arr.length - 1
+  while i >= 0
+    new_arr << arr[i]
+    i -= 1
+  end
+  new_arr
+end
+
+p reverse_array_manually([1,2,3,4,5]) # expect [5,4,3,2,1]
 
 # vi. Write a method that accepts two arrays of numbers, and returns an array of every sum of every combination of single numbers from first and second array. For example, if the method receives [1, 5, 10] and [100, 500, 1000], the method should return this array: [101, 501, 1001, 105, 505, 1005, 110, 510, 1010].
 
