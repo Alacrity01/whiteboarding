@@ -43,6 +43,29 @@ p greatest_number([5, 4, 8, 1, 2]) # expect 8
 
 # iv. Write a method that accepts a number and returns its factorial. For example, the factorial of 5 is 5 * 4 * 3 * 2 * 1 = 120.
 
+def factorial_by_recursion(num, factorial=num) # solve using recursion
+  if num - 1 == 1
+    return factorial
+  else
+    factorial = num * factorial_by_recursion(num - 1)
+    num -= 1
+  end
+  factorial
+end
+
+p factorial_by_recursion(5) # expect 120
+
+def factorial_without_recursion(num)
+  factorial = num
+  while num > 1
+    num -= 1
+    factorial *= num
+  end
+  factorial
+end
+
+p factorial_without_recursion(5) # expect 120
+
 # v.  Write a method that accepts one argument - an array of numbers that are in ascending order. The method that returns a new array with the same values in descending order. However, do not use the 'reverse' method built in to Ruby.
 
 
