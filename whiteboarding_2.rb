@@ -82,6 +82,34 @@ p reverse_array_manually([1,2,3,4,5]) # expect [5,4,3,2,1]
 
 # vi. Write a method that accepts two arrays of numbers, and returns an array of every sum of every combination of single numbers from first and second array. For example, if the method receives [1, 5, 10] and [100, 500, 1000], the method should return this array: [101, 501, 1001, 105, 505, 1005, 110, 510, 1010].
 
+def every_sum_combination_each(arr_1, arr_2) # using nested .each loop
+  sum_combinations_arr = []
+  arr_1.each do |number_1|
+    arr_2.each do |number_2|
+      sum_combinations_arr << number_1 + number_2
+    end
+  end 
+  sum_combinations_arr
+end
+
+p every_sum_combination_each([1, 5, 10], [100, 500, 1000]) # expect [101, 501, 1001, 105, 505, 1005, 110, 510, 1010]
+
+def every_sum_combination_index(arr_1, arr_2)
+  sum_combinations_arr = []
+  i = 0
+  while arr_1[i]
+    j = 0
+    while arr_1[j]
+      sum_combinations_arr << arr_1[i] + arr_2[j]
+      j += 1
+    end
+    i += 1
+  end
+  sum_combinations_arr
+end
+
+p every_sum_combination_index([1, 5, 10], [100, 500, 1000]) # expect [101, 501, 1001, 105, 505, 1005, 110, 510, 1010]
+
 # Bonus: Research recursive functions. Then solve the factorial question using recursion instead of a loop!
 
 # (If you're done early, here are some more array questions, some are fairly difficult: http://javarevisited.blogspot.com/2015/06/top-20-array-interview-questions-and-answers.html)
