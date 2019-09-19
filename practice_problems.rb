@@ -68,19 +68,34 @@ p sum
 # puts "Hi, Bob!"
 # ```
 # Rewrite the code using a while loop so the program will run *forever* unless the user enters a name of Bob.
-
-name = "Bob"
-while name == "Bob"
-   puts "What is your name?"
-   name = gets.chomp
+def bob()  
+   name = "Bob"
+   while name == "Bob"
+      puts "What is your name?"
+      name = gets.chomp
+   end
+   puts "Hi, #{name}!" # puts "Hi, Bob!"
 end
-puts "Hi, #{name}!" # puts "Hi, Bob!"
+# bob()
 
 #             1. Write a method called `average` that takes in an array of numbers and returns the average (the sum divided by the total number of numbers). Write it first using a `while` loop, then write it again using an `each` loop. (Hint - if you’re having issues with missing decimals, you may need the .to_f method…)
 # ```
 # p average([2, 1, 7, 5])  #=> 3.75
 # ```
 # ________________
+
+def average(arr)
+   index = 0
+   sum = 0.to_f
+   while arr[index] do
+      sum += arr[index]
+      index += 1
+   end
+   sum / arr.length
+end
+p average([2, 1, 7, 5])  #=> 3.75
+
+
 # Week 2
 #                1. Read about the Ruby `map` method. Then refactor the code below using `map`.
 # ```
