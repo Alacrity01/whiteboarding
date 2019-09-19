@@ -24,6 +24,15 @@ p sum
 # p double_numbers([4, 1, 3])  #=> [8, 2, 6]
 # ```
 
+def double_numbers(arr)
+   new_arr = []
+   arr.each do |number|  
+      new_arr << number * 2
+   end 
+   new_arr
+end
+p double_numbers([4, 1, 3])  #=> [8, 2, 6]
+
 
 #       1. Read about the Ruby `while` loop. Then refactor the code below using `while`. *Warning* - a `while` loop will run forever if you write it incorrectly (unlike a `times` loop or an `each` loop). You can enter Ctrl C in your terminal to force Ruby to quit if it’s stuck in an infinite loop.
 # ```
