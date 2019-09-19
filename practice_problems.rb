@@ -46,6 +46,14 @@ p double_numbers([4, 1, 3])  #=> [8, 2, 6]
 # end
 # p sum
 # ```
+numbers = [1, 2, 4, 2]
+sum = 0
+index = 0
+while numbers[index] do
+   sum += numbers[index]
+   index += 1
+end
+p sum
 
 
 #          1. The following code will run 100 times, and each time it will ask the user for their name. The code will break early if the user’s name is Bob.
