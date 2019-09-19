@@ -156,7 +156,16 @@ p fruits.map { |fruit| [fruit["name"], fruit["color"]] }.to_h
 
 #                      1. Write a method called `reverse_a_string` that accepts a string as a parameter and returns the reverse. The one caveat: Don't use the reverse method that already comes with Ruby!
 # ```
-# p reverse_a_string("abcde")  #=> "edcba"
+def reverse_a_string(str)
+   new_str = ""
+   index = str.length - 1
+   str.length.times do
+      new_str += str[index]
+      index -= 1
+   end
+   new_str
+end
+p reverse_a_string("abcde")  #=> "edcba"
 # ```
 
 
