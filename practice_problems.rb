@@ -55,7 +55,6 @@ while numbers[index] do
 end
 p sum
 
-
 #          1. The following code will run 100 times, and each time it will ask the user for their name. The code will break early if the user’s name is Bob.
 # ```
 # 100.times do
@@ -70,6 +69,12 @@ p sum
 # ```
 # Rewrite the code using a while loop so the program will run *forever* unless the user enters a name of Bob.
 
+name = "Bob"
+while name == "Bob"
+   puts "What is your name?"
+   name = gets.chomp
+end
+puts "Hi, #{name}!" # puts "Hi, Bob!"
 
 #             1. Write a method called `average` that takes in an array of numbers and returns the average (the sum divided by the total number of numbers). Write it first using a `while` loop, then write it again using an `each` loop. (Hint - if you’re having issues with missing decimals, you may need the .to_f method…)
 # ```
