@@ -134,7 +134,7 @@ items = [
          {id: 2, body: 'bar'},
          {id: 3, body: 'foobar'}
         ]
-p items.map { |index| index[:id] }
+p items.map { |item| item[:id] }
 #                   2. Use the `map` method with the `to_h` method to convert the array of hashes
 # ```
 # fruits = [
@@ -147,7 +147,12 @@ p items.map { |index| index[:id] }
 # ```
 # {"apple" => "red", "banana" => "yellow", "grape" => "purple"}
 # ```
-
+fruits = [
+ {"name" => "apple", "color" => "red"},
+ {"name" => "banana", "color" => "yellow"},
+ {"name" => "grape", "color" => "purple"}
+]
+p fruits.map { |fruit| [fruit["name"], fruit["color"]] }.to_h
 
 #                      1. Write a method called `reverse_a_string` that accepts a string as a parameter and returns the reverse. The one caveat: Don't use the reverse method that already comes with Ruby!
 # ```
