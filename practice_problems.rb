@@ -84,17 +84,24 @@ end
 # ```
 # ________________
 
-def average(arr)
+def average(arr, sum=0)
    index = 0
-   sum = 0.to_f
+   # sum = 0.to_f
    while arr[index] do
       sum += arr[index]
       index += 1
    end
-   sum / arr.length
+   sum.to_f / arr.length
 end
 p average([2, 1, 7, 5])  #=> 3.75
 
+def average(arr, sum=0)
+   arr.each do |number|
+      sum += number
+   end
+   sum.to_f / arr.length
+end
+p average([2, 1, 7, 5])  #=> 3.75
 
 # Week 2
 #                1. Read about the Ruby `map` method. Then refactor the code below using `map`.
