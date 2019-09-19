@@ -113,7 +113,9 @@ p average([2, 1, 7, 5])  #=> 3.75
 # end
 # p doubled_numbers
 # ```
-
+numbers = [1, 2, 4, 2]
+doubled_numbers = numbers.map { |number| number * 2 }
+p doubled_numbers
 
 #                   1. Use the `map` method to convert the array of hashes
 # ```
