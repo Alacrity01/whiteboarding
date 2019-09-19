@@ -129,7 +129,12 @@ p doubled_numbers
 # ```
 # [1, 2, 3]
 # ```
-
+items = [
+         {id: 1, body: 'foo'},
+         {id: 2, body: 'bar'},
+         {id: 3, body: 'foobar'}
+        ]
+p items.map { |index| index[:id] }
 #                   2. Use the `map` method with the `to_h` method to convert the array of hashes
 # ```
 # fruits = [
