@@ -195,7 +195,8 @@ p find_longest_word("What is the longest word in this phrase?")  #=> "longest"
 # end
 # p even_numbers
 # ```
-
+numbers = [1, 2, 4, 2]
+p numbers.select(&:even?) # or p [1, 2, 4, 2].select(&:even?)
 
 #                               1. Use the `select` method with the following array of hashes
 # ```
