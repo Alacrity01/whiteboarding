@@ -168,10 +168,19 @@ end
 p reverse_a_string("abcde")  #=> "edcba"
 # ```
 
-
 #                         1. Write a method called `find_longest_word`, which will accept a string as a parameter (usually a sentence), and return another string that will be the longest word in that sentence.
 # ```
-# p find_longest_word("What is the longest word in this phrase?")  #=> "longest"
+def find_longest_word(str)
+   sentence_parts_array = str.split(" ")
+   longest_part = ""
+   sentence_parts_array.each do |part|
+      if part.length > longest_part.length
+         longest_part = part
+      end
+   end
+   longest_part
+end
+p find_longest_word("What is the longest word in this phrase?")  #=> "longest"
 # ```
 # ________________
 # Week 3
