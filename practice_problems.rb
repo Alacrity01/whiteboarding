@@ -231,7 +231,13 @@ p flops = movies.select{ |movie| movie[:rating].to_f < 4.0 }.map { |movie| movie
 # ```
 # [2, 3]
 # ```
-
+movies = [
+          {id: 1, title: "Die Hard", rating: 4.0},
+          {id: 2, title: "Bad Boys", rating: 5.0},
+          {id: 3, title: "The Chamber", rating: 3.0},
+          {id: 4, title: "Fracture", rating: 2.0}
+         ]
+p movies_with_letter_b = movies.select{ |movie| movie[:title].downcase.include?("b") }.map{ |movie| movie[:id] } 
 
 #                                     1. Write a method called `palindrome?` which should accept a string as a parameter and return a boolean that indicates whether the string is a palindrome. A palindrome is a word that reads the same both forwards and backwards. Examples: eye, madam, racecar
 # ```
