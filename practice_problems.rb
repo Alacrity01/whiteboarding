@@ -270,7 +270,6 @@ def split_array(arr, int)
    end
    new_arr
 end
-
 p split_array([0, 1, 2, 3, 4, 5], 2)  #=> [[0, 1], [2, 3], [4, 5]]
 p split_array([0, 1, 2, 3, 4, 5], 3)  #=> [[0, 1, 2], [3, 4, 5]]
 # ```
@@ -283,9 +282,10 @@ p split_array([0, 1, 2, 3, 4, 5], 3)  #=> [[0, 1, 2], [3, 4, 5]]
 # numbers.each do |number|
 #  sum += number
 # end
-# p sum
+# p sum #=> 9
 # ```
-
+numbers = [1, 2, 4, 2]
+p numbers.reduce(:+)
 
 #                                              1. Write a method called `scrabble_score` which should accept a string as a parameter and return the amount of points it is worth in Scrabble. You can use the following hash to determine how many points each letter is worth:
 # ```
