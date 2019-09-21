@@ -304,18 +304,20 @@ p scrabble_score("scholars")  #=> 13
 
 #                                              2. Use the methods `map`, `select`, and `reduce` with the following array of hashes: 
 # ```
-# items = [
-#  {title: "NoDBA", words: 561, tags: ["nosql", "people", "orm"], type: :book},
-#  {title: "Infodeck", words: 1145, tags: ["nosql", "writing"], type: :book},
-#  {title: "OrmHate", words: 1718, tags: ["nosql", "orm"], type: :book},
-#  {title: "ruby", words: 1313, tags: ["ruby"], type: :article},
-#  {title: "DDD_Aggregate", words: 482, tags: ["nosql", "ddd"], type: :book}
-# ]
+items = [
+         {title: "NoDBA", words: 561, tags: ["nosql", "people", "orm"], type: :book},
+         {title: "Infodeck", words: 1145, tags: ["nosql", "writing"], type: :book},
+         {title: "OrmHate", words: 1718, tags: ["nosql", "orm"], type: :book},
+         {title: "ruby", words: 1313, tags: ["ruby"], type: :article},
+         {title: "DDD_Aggregate", words: 482, tags: ["nosql", "ddd"], type: :book}
+        ]
 # ```
 # and calculate the total amount of words for all items of type `:book`. The result should be
 # ```
-# 3906
+p books = items.select{ |item| item[:type] == :book }.map{ |item| item[:words] }.reduce(0){ |total,current| total + current } # 3906
 # ```
+
+
 
 #                                              3. Write a method called `mutation?`, which will accept two strings as a parameter and return true if all the letters from the second string are contained within the first string, and false otherwise.
 # ```
