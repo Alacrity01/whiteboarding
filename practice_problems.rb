@@ -241,10 +241,23 @@ p movies_with_letter_b = movies.select{ |movie| movie[:title].downcase.include?(
 
 #                                     1. Write a method called `palindrome?` which should accept a string as a parameter and return a boolean that indicates whether the string is a palindrome. A palindrome is a word that reads the same both forwards and backwards. Examples: eye, madam, racecar
 # ```
-# p palindrome?("racecar")   #=> true
-# p palindrome?("wazzzzup")  #=> false
-# ```
+def palindrome?(str)
+   index = str.length - 1
+   reverse_str = ''
+   str.length.times do
+      reverse_str += str[index]
+      index -= 1
+   end
 
+   if str == reverse_str
+      return true
+   else
+      return false
+   end
+end
+p palindrome?("racecar")   #=> true
+p palindrome?("wazzzzup")  #=> false
+# ```
 
 #                                        1. Write a method called `split_array`, with two parameters, the first being an array, and the second being an integer. The method will then create an array of other arrays, each one being the size of the indicated by the second parameter. 
 # ```
