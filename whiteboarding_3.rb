@@ -12,7 +12,21 @@ def reverse_string(str)
   new_str
 end
 p reverse_string("jeff")
+
 # 2. Write a function that accepts a string and returns the number of times that the letter “a” occurs in it.
+def a_count(str)
+  count = 0
+  i = 0
+  str.length.times do
+    if str[i].downcase == 'a'
+      count += 1
+    end
+    i += 1
+  end
+  count
+end
+p a_count('Alphabetical')
+
 
 # 3. Write a method that accepts two arguments. The first argument is an array of numbers that are in ascending order. The second argument is a number to search for within in the array. The method should do a linear search and return the index at which this value is found, or it should return nil if the value is not found. See if there’s a way in which you can optimize this method to keep its number of steps to a minimum! Note: Do not use the “index” method!
 
