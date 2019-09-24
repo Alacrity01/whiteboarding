@@ -353,8 +353,22 @@ p mutation?("burly", "python")  #=> false
 
 #                                                 1. Write a method called `sum_of_range`, which will accept an array containing two numbers, and return the sum of all of the whole numbers within the range of those numbers, inclusive.
 # ```
-# p sum_of_range([1, 4])  #=> 10
-# p sum_of_range([4, 1])  #=> 10
+
+def sum_of_range(arr)
+   arr = arr.sort
+   first = arr[0]
+   last = arr[1]
+
+   sum = 0
+   while first <= last do
+      sum += first
+      first += 1      
+   end
+   sum
+end
+
+p sum_of_range([1, 4])  #=> 10
+p sum_of_range([4, 1])  #=> 10
 # ```
 # ________________
 # Week 5
