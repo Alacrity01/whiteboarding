@@ -431,8 +431,13 @@ p haystack[:hay][3][:hay][:hay][1][:hay][2]
 
 #                                                                1. Return the missing letter from a given range of letters passed into the method as a string. If there is no missing letter, the method should return nil. bonus: returns a string of all missing letters as a string. ex: find_missing_letter("ace") would return "bd", write your own test.
 # ```
-# p find_missing_letter("opqrsuv")  #=> "t"
-# p find_missing_letter("xyz")      #=> nil
+def find_missing_letter(str)
+   first = str[0]
+   last = str[-1]
+
+end
+p find_missing_letter("opqrsuv")  #=> "t"
+p find_missing_letter("xyz")      #=> nil
 # ```
 
 
