@@ -382,6 +382,7 @@ p sum_of_range([4, 1])  #=> 10
 # ```
 
 
+
 #                                                       1. Use the `sort` method to sort the array of hashes first by age, then by name.
 # ```
 # people = [
@@ -423,7 +424,8 @@ p sum_of_range([4, 1])  #=> 10
 
 #                                                             1. Find the needle by writing one line of code. As an example, if `haystack = [:hay, :needle, :hay]`, you'd pull it out with: `haystack[1]`
 # ```
-# haystack = {hay: [:hay, :hay, :hay, {hay: {hay: [:hay, {hay: [:hay, :hay, :needle]}, :hay, :hay, :hay]}}, :hay, :hay]}
+haystack = {hay: [:hay, :hay, :hay, {hay: {hay: [:hay, {hay: [:hay, :hay, :needle]}, :hay, :hay, :hay]}}, :hay, :hay]}
+p haystack[:hay][3][:hay][:hay][1][:hay][2]
 # ```
 
 
