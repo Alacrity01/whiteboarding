@@ -321,8 +321,33 @@ p books = items.select{ |item| item[:type] == :book }.map{ |item| item[:words] }
 
 #                                              3. Write a method called `mutation?`, which will accept two strings as a parameter and return true if all the letters from the second string are contained within the first string, and false otherwise.
 # ```
-# p mutation?("burly", "ruby")    #=> true
-# p mutation?("burly", "python")  #=> false
+def mutation?(str1,str2) # Note: solution will not currently account for repeat letters (e.g. str1 = burly, str2 = rubby => will still return true)
+   str1_array = str1.split('')
+   str2_array = str2.split('')
+
+   str1_hash = {}
+
+   str1_array.each do |letter|
+      if str1_hash[letter]
+         str1_hash[letter] += 1
+      else
+         str1_hash[letter] = 0
+      end
+   end
+
+   i = 0
+   str2_array.length.times do
+      if str1_hash[str2_array[i]]
+         i += 1
+      else
+         return false
+      end
+   end
+
+   true
+end
+p mutation?("burly", "ruby")    #=> true
+p mutation?("burly", "python")  #=> false
 # ```
 
 
