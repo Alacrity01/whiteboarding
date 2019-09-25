@@ -29,6 +29,10 @@ p a_count('Alphabetical')
 
 
 # 3. Write a method that accepts two arguments. The first argument is an array of numbers that are in ascending order. The second argument is a number to search for within in the array. The method should do a linear search and return the index at which this value is found, or it should return nil if the value is not found. See if there’s a way in which you can optimize this method to keep its number of steps to a minimum! Note: Do not use the “index” method!
+def number_search(arr, num)
+    
+end
+
 
 # 4. Write a method that accepts two arguments. The first argument is an array of numbers that are in ascending order. The second argument is a new number that is not yet in the array. The method should return a new array with the new number inserted in the proper place. Do not use the “sort” method!
 
