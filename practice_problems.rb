@@ -374,11 +374,12 @@ p sum_of_range([4, 1])  #=> 10
 # Week 5
 #                                                    1. Read about the Ruby `sort` method. Then sort the following array of hashes by age. (Note - do not use the `sort_by` method for this exercise)
 # ```
-# people = [
-#  {"name" => "Saron", "age" => 34},
-#  {"name" => "Majora", "age" => 28},
-#  {"name" => "Danilo", "age" => 45}
-# ]
+people = [
+ {"name" => "Saron", "age" => 34},
+ {"name" => "Majora", "age" => 28},
+ {"name" => "Danilo", "age" => 45}
+]
+p people.sort_by {|k| k["age"] }
 # ```
 
 
@@ -425,7 +426,7 @@ p sum_of_range([4, 1])  #=> 10
 #                                                             1. Find the needle by writing one line of code. As an example, if `haystack = [:hay, :needle, :hay]`, you'd pull it out with: `haystack[1]`
 # ```
 haystack = {hay: [:hay, :hay, :hay, {hay: {hay: [:hay, {hay: [:hay, :hay, :needle]}, :hay, :hay, :hay]}}, :hay, :hay]}
-p haystack[:hay][3][:hay][:hay][1][:hay][2]
+# p haystack[:hay][3][:hay][:hay][1][:hay][2]
 # ```
 
 
@@ -436,8 +437,8 @@ def find_missing_letter(str)
    last = str[-1]
 
 end
-p find_missing_letter("opqrsuv")  #=> "t"
-p find_missing_letter("xyz")      #=> nil
+# p find_missing_letter("opqrsuv")  #=> "t"
+# p find_missing_letter("xyz")      #=> nil
 # ```
 
 
