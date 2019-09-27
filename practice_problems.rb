@@ -379,21 +379,12 @@ people = [
  {"name" => "Majora", "age" => 28},
  {"name" => "Danilo", "age" => 45}
 ]
-p people.sort_by {|k| k["age"] }
+puts people.sort_by {|k| k["age"] }
 # ```
 
 
 
 #                                                       1. Use the `sort` method to sort the array of hashes first by age, then by name.
-# ```
-# people = [
-#  {name: "bob", age: 15, gender: "male"},
-#  {name: "alice", age: 25, gender: "female"},
-#  {name: "bob", age: 56, gender: "male"},
-#  {name: "dave", age: 45, gender: "male"},
-#  {name: "alice", age: 56, gender: "female"},
-#  {name: "adam", age: 15, gender: "male"}
-# ]
 # ```
 # The result should be:
 # ```
@@ -405,6 +396,15 @@ p people.sort_by {|k| k["age"] }
 #  {:name=>"alice", :age=>56, :gender=>"female"},
 #  {:name=>"bob", :age=>56, :gender=>"male"}
 # ]
+# ```
+people = [
+ {name: "bob", age: 15, gender: "male"},
+ {name: "alice", age: 25, gender: "female"},
+ {name: "bob", age: 56, gender: "male"},
+ {name: "dave", age: 45, gender: "male"},
+ {name: "alice", age: 56, gender: "female"},
+ {name: "adam", age: 15, gender: "male"}
+]
 # ```
 
 
@@ -421,12 +421,12 @@ p people.sort_by {|k| k["age"] }
 # ```
 # ["Bad Boys", "Die Hard", "The Chamber", "Fracture"]
 # ```
-
+p movies = movies.sort_by{|k| k[:rating] }.map{|movie| movie[:title]}.reverse
 
 #                                                             1. Find the needle by writing one line of code. As an example, if `haystack = [:hay, :needle, :hay]`, you'd pull it out with: `haystack[1]`
 # ```
 haystack = {hay: [:hay, :hay, :hay, {hay: {hay: [:hay, {hay: [:hay, :hay, :needle]}, :hay, :hay, :hay]}}, :hay, :hay]}
-# p haystack[:hay][3][:hay][:hay][1][:hay][2]
+p haystack[:hay][3][:hay][:hay][1][:hay][2]
 # ```
 
 
