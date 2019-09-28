@@ -88,12 +88,25 @@ function sum_the_array(arr){
   return sum;
 }
 array = [1, 5, 7, 9, 2, 0]
-console.log(sum_the_array(array));
+// console.log(sum_the_array(array));
+
 // # Medium:
 // # 1. Write a method that accepts an array and returns it as a hash. For example, [“a”, “b”, “c] should turn into {0 => “a”, 1 => “b”, 2 => “c”}
 
 // # 2. Write a method that accepts a string and returns whether it’s a palindrome. (without using the reverse method)
-
+function palindrome(str){
+  str = str.toLowerCase();
+  reversed_str = "";
+  for(i = str.length - 1; i >= 0; i--){
+    reversed_str += str[i];
+  }
+  if(str === reversed_str){
+    return true; 
+  }
+  return false;
+}
+console.log(palindrome("Radar"));
+console.log(palindrome("radars"));
 // # Advanced:
 // # 1. Write a method to generate/print/store the first "n" prime numbers.
 
