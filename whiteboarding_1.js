@@ -105,10 +105,59 @@ function palindrome(str){
   }
   return false;
 }
-console.log(palindrome("Radar"));
-console.log(palindrome("radars"));
+// console.log(palindrome("Radar"));
+// console.log(palindrome("radars"));
+
+
 // # Advanced:
 // # 1. Write a method to generate/print/store the first "n" prime numbers.
+function n_prime_numbers(n){
+  let primes = [2]
+  let number_to_test = 2
+  let is_prime = true;
+  while(n > primes.length){
+    number_to_test++;
+    is_prime = true;
+    for(i = 0; i < primes.length - 1; i++){
+      if(number_to_test % primes[i] == 0){
+        is_prime = false;
+      }
+    }
+    if(is_prime == true){
+      primes.push(number_to_test);
+    }
+  }
+  return primes;
+}
+
+let first_10_primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+let test_case = n_prime_numbers(10)
+console.log(n_prime_numbers(10));
+// console.log(first_10_primes);
+
+let success = true;
+
+if(test_case.length != first_10_primes.length){
+  success = false;
+} else{
+
+// if(success = true){
+  for(i = 0; i <= first_10_primes.length; i++){
+    if(i == 9){
+      break;
+    }
+    if(first_10_primes[i] != test_case[i]){
+      success = false;
+    }
+  }
+}
+
+if(success == true){
+  console.log("The method is a success");
+} else{
+  console.log("There is an error in the method")
+}
+
 
 // # 2. Given an array of randomly sorted numbers, write a method that sorts them in descending order (without using any sort function built into the language.)
 
