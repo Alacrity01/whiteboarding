@@ -76,11 +76,19 @@ function count_of_55(arr){
   }
   return count
 }
-console.log(count_of_55(array));
+// console.log(count_of_55(array));
 
 
 // # 6. Write a method that accepts an array of numbers and returns the sum of the numbers. For example, if the input is [1, 5, 7, 9, 2, 0], the output should be 24. Don’t use any of the built in “sum” methods that Ruby comes with.
-
+function sum_the_array(arr){
+  let sum = 0;
+  for(i = 0; i < arr.length; i++){
+    sum += arr[i];
+  }
+  return sum;
+}
+array = [1, 5, 7, 9, 2, 0]
+console.log(sum_the_array(array));
 // # Medium:
 // # 1. Write a method that accepts an array and returns it as a hash. For example, [“a”, “b”, “c] should turn into {0 => “a”, 1 => “b”, 2 => “c”}
 
