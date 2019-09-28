@@ -7,8 +7,31 @@
 def array_100
    (1..100).to_a
 end
-p array_100
-# 2. Write a method that returns an array of every other number from 1 to 100. (That is, 1, 3, 5, 7 … 99).
+# p array_100
+
+# 2. Write a method that returns an array of every other number from 1 to 100. (That is, 1, 3, 5, 7 … 99)
+.
+def odds_100
+  arr = (1..100).to_a
+  arr.each do |number|
+    if number % 2 == 0
+      arr.delete(number)
+    end
+  end
+  arr
+end
+# p odds_100
+
+def odds_100
+  arr = []
+  n = 1
+  while n <= 100 do
+    arr << n
+    n += 2
+  end
+  arr
+end
+# p odds_100
 
 # 3. Write a method that returns an array of all numbers from 1 to 1000 that are divisible by 3.
 
