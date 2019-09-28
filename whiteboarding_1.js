@@ -13,8 +13,20 @@ function array_100(){
   }
   return(arr);
 }
-console.log(array_100());
+// console.log(array_100());
+
 // # 2. Write a method that returns an array of every other number from 1 to 100. (That is, 1, 3, 5, 7 … 99).
+function  odds_100(){
+  let n = 1;
+  let arr = [];
+  while(n <= 100){
+    arr.push(n);
+    n += 2;
+  }
+  return(arr);
+}
+console.log(odds_100());
+
 
 // # 3. Write a method that returns an array of all numbers from 1 to 1000 that are divisible by 3.
 
