@@ -25,10 +25,12 @@ function  odds_100(){
   }
   return(arr);
 }
-console.log(odds_100());
+// console.log(odds_100());
 
 
 // # 3. Write a method that returns an array of all numbers from 1 to 1000 that are divisible by 3.
+
+
 
 // # 4. Write a method that accepts one argument - an array of numbers - and returns an array of all numbers from that original array that are greater than 7. For example, if the input is [5, 8, 1, 7, 9, 10], the function should return [8, 9, 10].
 

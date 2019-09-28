@@ -58,7 +58,21 @@ def div_by_3
   end
   arr
 end
-p div_by_3
+# p div_by_3
+
+def div_by_3
+  n = 1
+  arr = []
+  while n <= 1000 do
+    if n % 3 == 0
+      arr << n
+    end
+    n += 1
+  end
+  arr
+end
+# p div_by_3
+
 
 # 4. Write a method that accepts one argument - an array of numbers - and returns an array of all numbers from that original array that are greater than 7. For example, if the input is [5, 8, 1, 7, 9, 10], the function should return [8, 9, 10].
 
