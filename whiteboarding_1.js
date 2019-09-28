@@ -52,7 +52,20 @@ function div_by_3(){
   return(arr);
 }
 console.log(div_by_3());
+
 // # 4. Write a method that accepts one argument - an array of numbers - and returns an array of all numbers from that original array that are greater than 7. For example, if the input is [5, 8, 1, 7, 9, 10], the function should return [8, 9, 10].
+function greater_than_7(arr){
+  let new_arr = [];
+  for(i = 0; i < arr.length; i++){
+    if(arr[i] > 7){
+      new_arr.push(arr[i]);
+    }
+  }
+  return new_arr;
+}
+let array = [5,50,2,22,1,3,5,70,100,7,6,8]
+
+console.log(greater_than_7(array));
 
 // # 5. Write a method that accepts an array of numbers as a parameter, and returns the number of how many 55’s there are in the array. For example, if the input is [55, 4, 7, 55, 9, 1, 55, 2, 3, 55, 0], the output should be 4. NOTE: DO NOT USE RUBY’s built-in “count” method.
 
