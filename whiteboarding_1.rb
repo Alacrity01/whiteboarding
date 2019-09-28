@@ -130,7 +130,23 @@ array = ['a', 'b', 'c']
 p array_to_hash(array)
 
 # 2. Write a method that accepts a string and returns whether it’s a palindrome. (without using the reverse method)
+def palindrome?(str)
+  str.downcase == str.downcase.reverse
+end
+p palindrome?("Radar")
+p palindrome?("Radars")
 
+def palindrome?(str)
+  reversed_str = ""
+  i = str.length - 1
+  str.length.times do
+    reversed_str += str[i]
+    i -= 1
+  end
+  str.downcase == reversed_str.downcase
+end
+p palindrome?("Radar")
+p palindrome?("Radars")
 # Advanced:
 # 1. Write a method to generate/print/store the first "n" prime numbers.
 
