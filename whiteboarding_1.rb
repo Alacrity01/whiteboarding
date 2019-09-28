@@ -10,7 +10,7 @@ end
 # p array_100
 
 # 2. Write a method that returns an array of every other number from 1 to 100. (That is, 1, 3, 5, 7 … 99)
-.
+
 def odds_100
   arr = (1..100).to_a
   arr.each do |number|
@@ -34,6 +34,31 @@ end
 # p odds_100
 
 # 3. Write a method that returns an array of all numbers from 1 to 1000 that are divisible by 3.
+def div_by_3
+  arr = []
+  n = 3
+  while n <= 999 do
+    arr << n
+    n += 3
+  end
+  arr
+end
+# p div_by_3
+
+def div_by_3
+  arr = (1..1000).to_a
+
+  n = 1
+  while n <= 1000 do
+    # p number % 3
+    if n % 3 != 0
+      arr.delete(n)
+    end
+    n += 1
+  end
+  arr
+end
+p div_by_3
 
 # 4. Write a method that accepts one argument - an array of numbers - and returns an array of all numbers from that original array that are greater than 7. For example, if the input is [5, 8, 1, 7, 9, 10], the function should return [8, 9, 10].
 
