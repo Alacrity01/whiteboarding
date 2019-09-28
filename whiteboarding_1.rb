@@ -5,9 +5,9 @@
 # Easy:
 # 1. Write a method that returns an array of every number from 1 to 100. 
 def array_100
-   array = []
-   
+   (1..100).to_a
 end
+p array_100
 # 2. Write a method that returns an array of every other number from 1 to 100. (That is, 1, 3, 5, 7 … 99).
 
 # 3. Write a method that returns an array of all numbers from 1 to 1000 that are divisible by 3.
