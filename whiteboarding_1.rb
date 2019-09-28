@@ -87,7 +87,7 @@ end
 array = [5,50,2,55,55,22,1,3,5,70,55,100,7,6,8,55]
 # p greater_than_7(array)
 
-# 5. Write a method that accepts an array of numbers as a parameter, and returns the number of how many 55’s there are in the array. For example, if the input is [55, 4, 7, 55, 9, 1, 55, 2, 3, 55, 0], the output should be 4. NOTE: DO NOT USE RUBY’s built-in “count” method.
+# 5. Write a method that accepts an array of numbers as a parameter, and returns the number of how many 55’s there are in the array. For example, if the input is [55, 4, 7, 55, 9, 1, 55, 2, 3, 55, 0], the output should be 4. NOTE: DO NOT USE RUBY’s built-in 'count' method.
 def count_of_55(arr)
   count = 0
   arr.each do |number|
@@ -98,7 +98,7 @@ def count_of_55(arr)
   count
 end
 p count_of_55(array)
-# 6. Write a method that accepts an array of numbers and returns the sum of the numbers. For example, if the input is [1, 5, 7, 9, 2, 0], the output should be 24. Don’t use any of the built in “sum” methods that Ruby comes with.
+# 6. Write a method that accepts an array of numbers and returns the sum of the numbers. For example, if the input is [1, 5, 7, 9, 2, 0], the output should be 24. Don’t use any of the built in 'sum' methods that Ruby comes with.
 def sum_the_array(arr)
   arr.reduce(&:+)
 end
@@ -116,7 +116,18 @@ p sum_the_array(array)
 
 
 # Medium:
-# 1. Write a method that accepts an array and returns it as a hash. For example, [“a”, “b”, “c] should turn into {0 => “a”, 1 => “b”, 2 => “c”}
+# 1. Write a method that accepts an array and returns it as a hash. For example, ['a', 'b', 'c'] should turn into {0 => 'a', 1 => 'b', 2 => 'c'}
+def array_to_hash(arr)
+  new_hash = {}
+  n = 0
+  arr.each do |element|
+    new_hash[n] = element
+    n += 1
+  end
+  new_hash
+end
+array = ['a', 'b', 'c'] 
+p array_to_hash(array)
 
 # 2. Write a method that accepts a string and returns whether it’s a palindrome. (without using the reverse method)
 
