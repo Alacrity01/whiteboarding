@@ -99,6 +99,21 @@ def count_of_55(arr)
 end
 p count_of_55(array)
 # 6. Write a method that accepts an array of numbers and returns the sum of the numbers. For example, if the input is [1, 5, 7, 9, 2, 0], the output should be 24. Don’t use any of the built in “sum” methods that Ruby comes with.
+def sum_the_array(arr)
+  arr.reduce(&:+)
+end
+array = [1, 5, 7, 9, 2, 0]
+# p sum_the_array(array)
+
+def sum_the_array(arr)
+  sum = 0
+  arr.each do |number|
+    sum += number
+  end
+  sum
+end
+p sum_the_array(array)
+
 
 # Medium:
 # 1. Write a method that accepts an array and returns it as a hash. For example, [“a”, “b”, “c] should turn into {0 => “a”, 1 => “b”, 2 => “c”}
